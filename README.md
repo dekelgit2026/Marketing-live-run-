@@ -13,6 +13,7 @@ The design covers campaign localization with brand guardrails. It was produced b
 | **Scope** | The "It will NOT…" fences, and what enforces each one. |
 | **Pattern** | The pattern ladder and why the design stops at rung 1 + 2. |
 | **Proof** | The 18-case golden test set against the ship bar. |
+| **Connections and cost** | What has to connect to what to run it for real. Pick a tool for each connection (or tick what you already own), see the estimated monthly cost and setup plan, and switch between the translation feature and the full multi-brand platform. Costs are estimates to confirm with each vendor. |
 
 **What's real and what's simulated:**
 - **Real:** the rule checks, the brand rules, the workflow and architecture, and the test cases. They come from the design files.

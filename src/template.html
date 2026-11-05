@@ -278,6 +278,35 @@ tr.new td{animation:rowin 1.2s ease}
 .callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:16px}
 .foot{margin-top:28px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+/* -------- connections and cost (self-contained, prefixed .cx) -------- */
+.cx{display:flex;flex-direction:column;gap:14px}
+.cx .card{padding:16px}.cx .small{font-size:.88rem}.cx .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.cx .spacer{flex:1}
+.cx .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.cx .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.cx .g2,.cx .g3{grid-template-columns:minmax(0,1fr)}}
+.cx .sheet{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px}
+.cx dl.kv{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;margin:0}.cx dl.kv dt{font:700 .66rem var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}.cx dl.kv dd{margin:0}
+.cx .viewseg{display:inline-flex;background:var(--tint);border-radius:12px;padding:4px;gap:2px}.cx .viewseg button{border:0;background:none;padding:8px 14px;border-radius:9px;font:700 .88rem var(--f-display);color:var(--ink-2)}.cx .viewseg button[aria-pressed="true"]{background:var(--card);color:var(--pink);box-shadow:var(--shadow)}
+.cx .hero{display:flex;flex-direction:column;gap:10px;background:linear-gradient(120deg,var(--pink-bg),var(--card) 62%)}
+.cx .mapbox{overflow-x:auto}.cx .mapbox svg{display:block;width:100%;min-width:760px;height:auto}
+.cx .nd rect{fill:var(--card);stroke:var(--line);stroke-width:1.5;transition:fill .25s,stroke .25s}.cx .nd text{fill:var(--ink);text-anchor:start}.cx .nd .t{font:700 13px var(--f-display)}.cx .nd .s{font:500 9.5px var(--f-mono);fill:var(--ink-3)}
+.cx .nd{cursor:pointer;transition:transform .2s;transform-box:fill-box;transform-origin:center}.cx .nd:hover{transform:translateY(-2px)}.cx .nd.on rect{stroke:var(--pink);stroke-width:2.5;fill:var(--pink-bg)}.cx .nd.later rect{stroke-dasharray:5 4}.cx .nd.person rect{stroke:var(--human)}.cx .nd:focus-visible{outline:none}.cx .nd:focus-visible rect{stroke:var(--pink);stroke-width:3}.cx .nd.hit{animation:cxhit .35s ease}
+@keyframes cxhit{50%{transform:scale(1.07)}}.cx.fresh .nd{animation:cxrise .5s cubic-bezier(.2,.8,.3,1) both;animation-delay:calc(var(--i)*45ms)}@keyframes cxrise{from{opacity:0;transform:translateY(10px)}}
+.cx .ed{stroke:var(--line);stroke-width:2;fill:none;stroke-dasharray:5 8;animation:cxflow 2.4s linear infinite}.cx .ed.on{stroke:var(--pink);stroke-width:3;animation-duration:.9s}.cx .ed.live{stroke-width:4;filter:drop-shadow(0 0 5px var(--pink-2))}.cx .ed.later{opacity:.55}@keyframes cxflow{to{stroke-dashoffset:-26}}
+.cx .en{font:700 10px var(--f-mono);fill:var(--ink-2);text-anchor:middle;paint-order:stroke;stroke:var(--bg);stroke-width:4px}.cx #cx-packet{fill:var(--pink);filter:drop-shadow(0 0 7px var(--pink-2))}
+.cx .lg{position:relative;display:inline-grid;place-items:center;flex:none;width:var(--s);height:var(--s);border-radius:calc(var(--s)*.26);background:var(--c);color:#fff;font:800 calc(var(--s)*.42)/1 var(--f-display);overflow:hidden;border:1px solid rgba(127,127,127,.22)}.cx .lg i{font-style:normal}.cx .lg.fav i{color:#333}
+.cx .lg img{position:absolute;inset:16%;width:68%;height:68%;object-fit:contain;opacity:0;transition:opacity .2s}.cx .lg.ok img{opacity:1}.cx .lg.ok i{visibility:hidden}.cx .lg.mono img{filter:brightness(0) invert(1)}
+.cx .stackgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:14px;align-items:start}.cx .col{display:flex;flex-direction:column;gap:14px}
+@media(max-width:980px){.cx .stackgrid{grid-template-columns:minmax(0,1fr)}.cx .plan{position:static!important;max-height:none!important}}
+.cx .plan{position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto}.cx .total{font:800 clamp(1.9rem,3.6vw,2.6rem)/1.1 var(--f-display);color:var(--pink);font-variant-numeric:tabular-nums;transition:transform .2s;margin-top:6px}.cx .total.bump{transform:scale(1.05)}
+.cx .stacked{display:flex;height:11px;border-radius:9px;overflow:hidden;gap:2px;background:var(--tint);margin-top:8px}.cx .stacked i{display:block;transition:flex .5s ease;min-width:3px}
+.cx .planlines{list-style:none;margin:10px 0;padding:0}.cx .planlines li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:.88rem}.cx .planlines small{display:block;color:var(--ink-2);font-size:.76rem}
+.cx .rolecard{display:flex;flex-direction:column;gap:6px}.cx .rolecost{font:800 1.05rem var(--f-display);color:var(--pink)}.cx .rolecost small{font:500 .72rem var(--f-body);color:var(--ink-2)}
+.cx .toolgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:7px;margin-top:4px}.cx .toolopt{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:9px 5px;border:1.5px solid var(--line);background:var(--card);border-radius:12px;transition:transform .15s,border-color .15s,box-shadow .15s}.cx .toolopt:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.cx .toolopt[aria-checked="true"]{border-color:var(--pink);background:var(--pink-bg);box-shadow:0 0 0 2px var(--pink-bg)}
+.cx .tn{font:700 .76rem/1.15 var(--f-display)}.cx .tc{font:600 .7rem var(--f-mono);color:var(--ink-2)}.cx .tool{display:inline-flex;gap:6px;align-items:center;font-weight:600;white-space:nowrap}.cx .alts{display:flex;gap:4px;flex-wrap:wrap;min-width:92px}
+.cx input[type=number]{width:100%;padding:7px 9px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}.cx label.fld{display:flex;flex-direction:column;gap:3px;font-weight:600}
+.cx .todo{list-style:none;margin:0;padding:0}.cx .todo label{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}.cx .todo input:checked~span{opacity:.5;text-decoration:line-through}.cx .todo em{font-style:normal;white-space:nowrap}
+.cx .scopechip{display:inline-block;font:700 .62rem var(--f-mono);letter-spacing:.05em;padding:2px 6px;border-radius:5px;background:var(--hold-bg);color:var(--hold);margin-left:6px;vertical-align:2px}
+@media(prefers-reduced-motion:reduce){.cx *{animation:none!important;transition:none!important}}
 </style>
 
 <div class="wrap">
@@ -296,6 +325,7 @@ tr.new td{animation:rowin 1.2s ease}
     <button role="tab" aria-selected="false" data-scene="scope" id="t-scope">Scope</button>
     <button role="tab" aria-selected="false" data-scene="pattern" id="t-pattern">Pattern</button>
     <button role="tab" aria-selected="false" data-scene="proof" id="t-proof">Proof</button>
+    <button role="tab" aria-selected="false" data-scene="connections" id="t-connections">Connections and cost</button>
   </nav>
 
   <!-- ============ LIVE RUN ============ -->
@@ -426,6 +456,9 @@ tr.new td{animation:rowin 1.2s ease}
       <div class="card panel human"><h3>Weakest box <span class="tag human">spec §5 · human role</span></h3><p>The feature has no owner, so nobody is named to make the translator decision, receive the alerts or read the unblinded log. Question for the process owner: <b>who owns this and decides after month 1?</b></p></div>
     </div>
   </section>
+
+  <!-- ============ CONNECTIONS AND COST ============ -->
+  <section class="scene" id="scene-connections" aria-labelledby="t-connections" hidden><div id="cx"></div></section>
 
   <p class="foot">Kestrel Analytics, its products, briefs, competitors and people are fictional, built for the AI Solutions Architect course. Demo briefs are new and are not test cases; test cases come only from the pack's real examples. Map: Natural Earth (public domain).</p>
 </div>
@@ -839,4 +872,190 @@ function init(){
   selectBrief(0);
 }
 init();
+</script>
+<script>
+/* ---------- connections and cost: self-contained module ---------- */
+(()=>{
+const root=document.getElementById("cx");if(!root)return;
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const SI="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/";
+const LOGOS={n8n:{si:"n8n",c:"#EA4B71"},make:{si:"make",c:"#6D00CC"},zapier:{si:"zapier",c:"#FF4F00"},power:{fav:"powerautomate.microsoft.com",c:"#0066FF",m:"PA"},python:{si:"python",c:"#3776AB"},
+ claude:{si:"claude",c:"#D97757"},openai:{si:"openai",c:"#0F8F6F"},gemini:{si:"googlegemini",c:"#8E75B2"},ollama:{si:"ollama",c:"#333"},
+ monday:{fav:"monday.com",c:"#FFFFFF",m:"M"},asana:{si:"asana",c:"#F06A6A"},clickup:{si:"clickup",c:"#7B68EE"},trello:{si:"trello",c:"#0052CC"},airtable:{si:"airtable",c:"#18A0D8"},
+ gforms:{si:"googleforms",c:"#7248B9"},typeform:{si:"typeform",c:"#262627"},jotform:{fav:"jotform.com",c:"#FFFFFF",m:"J"},msforms:{fav:"forms.office.com",c:"#FFFFFF",m:"F"},
+ github:{si:"github",c:"#24292F"},sheets:{si:"googlesheets",c:"#1E8E4E"},supabase:{si:"supabase",c:"#249361"},postgres:{si:"postgresql",c:"#4169E1"},
+ presidio:{c:"#4A5A78",m:"Pr"},gmail:{si:"gmail",c:"#EA4335"},slack:{si:"slack",c:"#4A154B"},teams:{fav:"teams.microsoft.com",c:"#FFFFFF",m:"T"},
+ ga:{si:"googleanalytics",c:"#E37400"},plausible:{si:"plausibleanalytics",c:"#5850EC"},posthog:{si:"posthog",c:"#1D4AFF"},matomo:{si:"matomo",c:"#3152A0"},
+ gsc:{si:"googlesearchconsole",c:"#458CF5"},meta:{si:"meta",c:"#0467DF"},people:{c:"#B87800",m:"P"},channels:{c:"#5A6B85",m:"C"}};
+function logo(k,size){const l=LOGOS[k]||{c:"#5A6B85",m:"?"},s=size||28;const src=l.si?SI+l.si+".svg":l.fav?`https://www.google.com/s2/favicons?domain=${l.fav}&sz=64`:"";
+ return`<span class="lg ${l.si?"mono":"fav"}" style="--c:${l.c};--s:${s}px" aria-hidden="true"><i>${esc(l.m||(l.si||"?").slice(0,1).toUpperCase())}</i>${src?`<img src="${src}" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">`:""}</span>`;}
+const modelCost=(i,o)=>C=>{const calls=Math.ceil(C.pieces/3)*1.3;return[calls*(1470*i+250*o)/1e6,calls*(4400*i+1000*o)/1e6*2];};
+const seats=(lo,hi,min)=>C=>{const n=Math.max(C.seats,min||1);return[n*lo,n*hi];};
+const flat=(lo,hi)=>()=>[lo,hi];
+const ROLES=[
+ {k:"orch",n:"Orchestration",why:"Runs the fixed steps and connects everything else.",effort:[8,24],todo:"Build the workflow: brief, pre-check, draft, check, translator pairing, routing and log.",opts:[
+  {id:"n8ncloud",n:"n8n Cloud",l:"n8n",cost:C=>{const e=C.pieces*6;return e<=2500?[23,28]:e<=1e4?[58,70]:[770,925];},note:"From €20 a month on annual billing. Tier set by executions, assuming 6 per piece. Euros converted roughly."},
+  {id:"n8nself",n:"n8n self-hosted",l:"n8n",cost:flat(5,20),note:"Community software is free. You pay for a server and do the upkeep."},
+  {id:"make",n:"Make",l:"make",cost:C=>C.pieces*8<=1e4?[11,19]:[25,60],note:"Credit-based. Assumes 8 credits per piece. Higher tier is an estimate."},
+  {id:"zapier",n:"Zapier",l:"zapier",cost:C=>{const t=C.pieces*8;return t<=750?[20,30]:t<=2000?[49,69]:[69,200];},note:"Task-based, so multi-step flows add up. Assumes 8 tasks per piece."},
+  {id:"power",n:"Power Automate",l:"power",cost:flat(15,15),note:"About $15 per builder a month. Best if you already use Microsoft 365."},
+  {id:"code",n:"Custom code",l:"python",cost:flat(5,20),note:"Python or similar, plus a server. Most control and most build time.",extraEffort:[24,60]}]},
+ {k:"model",n:"AI model",why:"Writes the drafts and summaries.",effort:[2,6],todo:"Create the key, store it in the orchestrator's credentials, and test prompts on the 18-case test set.",opts:[
+  {id:"sonnet",n:"Claude Sonnet 5.5",l:"claude",cost:modelCost(2,10),note:"$2 in, $10 out per million tokens."},
+  {id:"haiku",n:"Claude Haiku 5.5",l:"claude",cost:modelCost(.1,.5),note:"$0.10 in, $0.50 out per million tokens. Must still pass your tests."},
+  {id:"opus",n:"Claude Opus 5.5",l:"claude",cost:modelCost(4,20),note:"$4 in, $20 out per million tokens."},
+  {id:"openai",n:"OpenAI mid-tier",l:"openai",cost:modelCost(2,12),note:"Reported at about $2 in, $12 out. Sources disagree, so confirm."},
+  {id:"gemini",n:"Gemini Flash",l:"gemini",cost:modelCost(.75,3.75),note:"Reported at about $0.75 in, $3.75 out. Sources disagree, so confirm."},
+  {id:"local",n:"Local model",l:"ollama",cost:flat(0,0),note:"Free software through Ollama. Hardware isn't counted, and quality must pass your tests."}]},
+ {k:"board",n:"Board and queue",why:"Holds pieces, status and human decisions.",effort:[4,10],todo:"Create the board, columns, statuses and views for the marketer and decider.",opts:[
+  {id:"mstd",n:"monday Standard",l:"monday",cost:seats(12,14,3),note:"$12 a seat on annual billing, about $14 monthly. Minimum 3 seats."},
+  {id:"mpro",n:"monday Pro",l:"monday",cost:seats(19,22,3),note:"$19 a seat on annual billing, about $22 monthly. Adds private boards."},
+  {id:"mfree",n:"monday Free",l:"monday",cost:flat(0,0),note:"Up to 2 seats and 3 boards. Good for trying it out."},
+  {id:"asana",n:"Asana Starter",l:"asana",cost:seats(11,14),note:"About $11 a seat on annual billing. Monthly rate estimated."},
+  {id:"clickup",n:"ClickUp Unlimited",l:"clickup",cost:seats(7,10),note:"$7 a seat on annual billing, about $10 monthly."},
+  {id:"trello",n:"Trello Standard",l:"trello",cost:seats(5,6),note:"$5 a seat on annual billing, $6 monthly."},
+  {id:"airtable",n:"Airtable Team",l:"airtable",cost:seats(20,24),note:"About $20 a seat. Sources vary, so confirm."}]},
+ {k:"form",n:"Forms",why:"Takes in briefs and translator submissions.",effort:[1,4],todo:"Build the brief form and the translator form, each linked by piece ID.",opts:[
+  {id:"mform",n:"monday form",l:"monday",cost:flat(0,0),note:"Assumed included. monday also lists WorkForms as a separate product, so confirm."},
+  {id:"gforms",n:"Google Forms",l:"gforms",cost:flat(0,0),note:"Free with a Google account."},
+  {id:"msforms",n:"Microsoft Forms",l:"msforms",cost:flat(0,0),note:"Included with most Microsoft 365 plans. Confirm yours."},
+  {id:"typeform",n:"Typeform Basic",l:"typeform",cost:flat(29,59),note:"From about $29. Reported limit of 100 responses a month."},
+  {id:"jotform",n:"Jotform Bronze",l:"jotform",cost:flat(15,39),note:"Sources report $15 to $39, with about 1,000 submissions."}]},
+ {k:"profile",n:"Brand guide and claims",nFull:"Profile store",why:"Keeps the brand guide and approved claims, versioned.",whyFull:"Keeps each brand's or product's rules and versions.",effort:[2,6],todo:"Store the brand guide and claims list as versioned files the prompt and rules both read.",todoFull:"Define the profile format, then add one profile per brand or product.",opts:[
+  {id:"git",n:"GitHub repo",l:"github",cost:flat(0,0),note:"Free private repos. Gives you full version history."},
+  {id:"psheet",n:"Google Sheets",l:"sheets",cost:flat(0,0),note:"Easy for non-technical editors, and easier to break."},
+  {id:"psupa",n:"Supabase",l:"supabase",cost:flat(0,25),note:"Free tier, or $25 a month for Pro."}]},
+ {k:"log",n:"Run log",why:"Records every step, including the hidden source.",effort:[2,5],todo:"Create the log, restrict who can read the source, and connect it.",opts:[
+  {id:"lsupa",n:"Supabase",l:"supabase",cost:flat(0,25),note:"Free tier, or $25 a month for Pro. Compute can add more."},
+  {id:"lsheet",n:"Google Sheets",l:"sheets",cost:flat(0,0),note:"Simple and free. Access must be tightly restricted."},
+  {id:"lpg",n:"Postgres",l:"postgres",cost:flat(0,15),note:"Free software, on a server you may already have."},
+  {id:"lair",n:"Airtable",l:"airtable",cost:flat(20,24),note:"One seat. Confirm the record limits."}]},
+ {k:"names",n:"Name check",why:"Stops personal data before any AI call.",effort:[2,8],todo:"Run the check before the model call, and test it on real briefs.",opts:[
+  {id:"presidio",n:"Microsoft Presidio",l:"presidio",cost:flat(0,10),note:"Free software. It needs somewhere to run, and can share a server."},
+  {id:"regex",n:"Pattern rules only",l:"python",cost:flat(0,0),note:"Free, and catches emails more easily than names."}]},
+ {k:"notify",n:"Notifications",why:"Sends reminders, late-translator chases and alerts.",effort:[1,3],todo:"Connect the sender and agree who gets what.",opts:[
+  {id:"gmail",n:"Gmail",l:"gmail",cost:flat(0,0),note:"Free for low volume."},
+  {id:"slackf",n:"Slack Free",l:"slack",cost:flat(0,0),note:"Free, with 90 days of message history and up to 10 apps."},
+  {id:"slackp",n:"Slack Pro",l:"slack",cost:seats(7.25,8.75),note:"$7.25 a user on annual billing, $8.75 monthly."},
+  {id:"teams",n:"Microsoft Teams",l:"teams",cost:flat(0,0),note:"No added cost if you already have it."},
+  {id:"mnote",n:"monday notifications",l:"monday",cost:flat(0,0),note:"Built in if your board is on monday."}]},
+ {k:"analytics",full:true,n:"Analytics and sales",why:"Connects campaigns to results, per brand or product.",effort:[2,8],todo:"Set tracked links, connect analytics, and plan any sales imports.",opts:[
+  {id:"ga",n:"Google Analytics",l:"ga",cost:flat(0,0),note:"Free. Check the privacy requirements for your markets."},
+  {id:"plausible",n:"Plausible",l:"plausible",cost:flat(9,19),note:"From $9 a month for 10,000 pageviews."},
+  {id:"posthog",n:"PostHog",l:"posthog",cost:flat(0,0),note:"Has a free tier. Confirm the limits."},
+  {id:"matomo",n:"Matomo self-hosted",l:"matomo",cost:flat(0,10),note:"Free software, on your own server."}]}
+];
+const PRESETS={recommended:{label:"Recommended",picks:{orch:"n8ncloud",model:"sonnet",board:"mstd",form:"mform",profile:"git",log:"lsupa",names:"presidio",notify:"gmail",analytics:"ga"}},
+ lowest:{label:"Lowest cost",picks:{orch:"n8nself",model:"haiku",board:"mfree",form:"gforms",profile:"git",log:"lsheet",names:"presidio",notify:"gmail",analytics:"ga"}},
+ nocode:{label:"No code",picks:{orch:"make",model:"sonnet",board:"mstd",form:"mform",profile:"psheet",log:"lsheet",names:"regex",notify:"slackf",analytics:"ga"}},
+ microsoft:{label:"Microsoft 365 shop",picks:{orch:"power",model:"sonnet",board:"mstd",form:"msforms",profile:"git",log:"lpg",names:"presidio",notify:"teams",analytics:"ga"}}};
+const X={view:"translation",vol:{pieces:360,seats:5},picks:{...PRESETS.recommended.picks},have:{},preset:"recommended",done:{},sel:null,seen:false,tok:0,tracing:false,last:null};
+const full=()=>X.view==="full";
+const roles=()=>ROLES.filter(r=>!r.full||full());
+const role=k=>ROLES.find(r=>r.k===k);
+const rn=r=>full()&&r.nFull?r.nFull:r.n;
+const chosen=k=>{const r=role(k);return r.opts.find(o=>o.id===X.picks[k])||r.opts[0];};
+const roleCost=k=>X.have[k]?[0,0]:chosen(k).cost(X.vol);
+const total=()=>roles().reduce((a,r)=>{const c=roleCost(r.k);return[a[0]+c[0],a[1]+c[1]];},[0,0]);
+const effort=()=>roles().reduce((a,r)=>{const x=chosen(r.k).extraEffort||[0,0];return[a[0]+r.effort[0]+x[0],a[1]+r.effort[1]+x[1]];},[0,0]);
+const money=n=>n===0?"$0":n<1?"under $1":n<10&&n%1?"$"+n.toFixed(2):"$"+Math.round(n).toLocaleString("en-US");
+const range=c=>Math.abs(c[0]-c[1])<.005?money(c[0]):(c[1]<1?"under $1":`${money(c[0])}–${money(c[1])}`);
+function warnings(){const w=[],b=X.picks.board,f=X.picks.form,V=X.vol,isM=/^m(std|pro|free)$/.test(b);
+ if(b==="mfree"&&V.seats>2&&!X.have.board)w.push(["block","monday Free covers only 2 seats, and you've set "+V.seats+"."]);
+ if(/^m(std|pro)$/.test(b)&&V.seats<3&&!X.have.board)w.push(["note","monday bills a minimum of 3 seats, so you pay for "+(3-V.seats)+" you won't use."]);
+ if(f==="mform"&&!isM)w.push(["block","A monday form needs a monday board. Change the form or the board."]);
+ if(X.picks.notify==="mnote"&&!isM)w.push(["block","monday notifications need a monday board."]);
+ if(f==="mform")w.push(["note","Confirm monday form availability, because monday also sells WorkForms separately."]);
+ if(f==="typeform"&&V.pieces>100)w.push(["block","Typeform Basic reportedly allows 100 responses a month, and you've set "+V.pieces+" pieces."]);
+ if(X.picks.names==="regex")w.push(["hold","Pattern rules miss many names, so personal data could reach the model."]);
+ if(X.picks.log==="lsheet")w.push(["hold","The log holds the hidden source. Anyone with sheet access could break the blind test."]);
+ w.push(["note","Blind test: monday's pricing page doesn't list column-level permissions. Keep the source only in the run log, whichever board you choose."]);
+ if(X.picks.model==="local"||X.picks.model==="haiku")w.push(["note","A cheaper model has to pass the same test set before you rely on it."]);
+ return w;}
+function planText(){const t=total(),e=effort();return[`Kestrel campaign system: ${full()?"full platform":"translation feature"}`,`${X.vol.pieces} pieces a month, ${X.vol.seats} seats`,"",...roles().map(r=>`${rn(r)}: ${chosen(r.k).n}${X.have[r.k]?" (already owned)":""}, ${range(roleCost(r.k))} a month`),"",`Total: ${range(t)} a month`,`First year: ${range([t[0]*12,t[1]*12])}`,`Setup effort: ${e[0]}–${e[1]} hours (estimate)`,"","What needs to be done:",...roles().map((r,i)=>`${i+1}. ${rn(r)}: ${full()&&r.todoFull?r.todoFull:r.todo}`),"","Costs are estimates. Confirm on each vendor's pricing page. Ad spend isn't included."].join("\n");}
+const NODE_ROLE={F:"form",T:"form",N:"orch",S3:"orch",P:"profile",L:"log",R:"names",B:"board",M:"analytics",C:"model",A:"notify"};
+const NODES={F:{x:95,y:70,t:"Brief form"},T:{x:95,y:190,t:"Translator form"},A:{x:95,y:320,t:"Notifications"},N:{x:360,y:130,t:"Orchestration"},P:{x:360,y:30,t:"Brand guide",tf:"Profile store"},L:{x:360,y:320,t:"Run log"},R:{x:625,y:40,t:"Name check"},B:{x:625,y:190,t:"Board and queue"},M:{x:625,y:320,t:"Analytics and sales",full:true},C:{x:890,y:40,t:"AI model"},H:{x:890,y:190,t:"People",s:"Editors and deciders",l:"people",person:true},X:{x:890,y:320,t:"Channels",s:"Published by hand",l:"channels",person:true},
+ S1:{x:225,y:440,t:"SEO",s:"Search Console",l:"gsc",later:true,full:true},S2:{x:490,y:440,t:"Paid media",s:"Ad platform APIs",l:"meta",later:true,full:true},S3:{x:755,y:440,t:"Orchestrator",s:"Built last",later:true,full:true}};
+const LINKS=[
+ {n:1,a:"F",b:"N",r:"form",what:"Brief, brand and product",trig:"Form submitted",acc:"Webhook",st:"To build"},
+ {n:2,a:"N",b:"P",r:"profile",what:"Reads the brand guide and claims, with version",trig:"Each run",acc:"Read only",st:"To build"},
+ {n:3,a:"N",b:"R",r:"names",what:"Brief and copy",trig:"Each check",acc:"Local only",st:"Rules exist in this demo"},
+ {n:4,a:"N",b:"C",r:"model",what:"Checked brief and brand guide",trig:"After the pre-check",acc:"API key stored in the orchestrator",st:"Needs your account"},
+ {n:5,a:"N",b:"B",r:"board",what:"Creates pieces, updates status",trig:"Each stage",acc:"Named boards only",st:"To build"},
+ {n:6,a:"T",b:"N",r:"form",what:"Translator's draft and piece ID",trig:"Form submitted",acc:"Webhook",st:"To build"},
+ {n:7,a:"B",b:"N",r:"board",what:"Edits, pass or fail, picks",trig:"Column changes",acc:"Webhook",st:"To build"},
+ {n:8,a:"N",b:"L",r:"log",what:"Every step, including the source",trig:"Each stage",acc:"Write; restricted reading",st:"Tool to choose"},
+ {n:9,a:"N",b:"A",r:"notify",what:"Reminders, late-translator chases and alerts",trig:"Schedule or event",acc:"Sender access",st:"Channel to choose"},
+ {n:10,a:"X",b:"M",r:"analytics",what:"Clicks, sales and views",trig:"Tracked links, imports",acc:"Read only",st:"Depends on your platforms",full:true},
+ {n:"a",a:"B",b:"H",r:"board",what:"Work to edit and decide",trig:"Status change",acc:"Board seats",st:"To build"},
+ {n:"b",a:"H",b:"X",what:"Approved copy",trig:"After approval",acc:"The person's own logins",st:"Exists: manual"},
+ {n:"c",a:"M",b:"L",r:"analytics",what:"Results per campaign",trig:"Scheduled import",acc:"Write to log",st:"To build",full:true},
+ {n:"d",a:"S1",b:"N",what:"Search Console and site analytics",trig:"Schedule",acc:"Read only at first",st:"Later",later:true,full:true,cost:"$0 access"},
+ {n:"e",a:"S2",b:"N",what:"Facebook, LinkedIn and Google Ads APIs",trig:"Schedule, approval",acc:"Read only, then capped actions",st:"Later",later:true,full:true,cost:"API access $0; ad spend extra"},
+ {n:"f",a:"S3",b:"B",what:"Routing and status across modules",trig:"Board events",acc:"No ad or publishing credentials",st:"Built last",later:true,full:true,cost:"Uses orchestration"}];
+const nodes=()=>Object.keys(NODES).filter(k=>!NODES[k].full||full());
+const links=()=>LINKS.filter(l=>!l.full||full());
+const stTag=s=>/exist/i.test(s)?"ok":/account|platforms/i.test(s)?"block":/choose/i.test(s)?"human":/later|last/i.test(s)?"":"sys";
+const nodeT=k=>full()&&NODES[k].tf?NODES[k].tf:NODES[k].t;
+const nodeLogo=k=>{const n=NODES[k];if(n.l)return n.l;if(k==="S3")return chosen("orch").l;return chosen(NODE_ROLE[k]).l;};
+const nodeSub=k=>{const n=NODES[k];if(n.s)return n.s;return chosen(NODE_ROLE[k]).n;};
+function mapSVG(){const sel=X.sel,on=l=>l.a===sel||l.b===sel,nodeOn=k=>k===sel||links().some(l=>on(l)&&(l.a===k||l.b===k));
+ const lines=links().map(l=>{const a=NODES[l.a],b=NODES[l.b];return`<line class="ed ${on(l)?"on":""} ${l.later?"later":""}" data-n="${l.n}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/><text class="en" x="${(a.x+b.x)/2}" y="${(a.y+b.y)/2+3}">${l.n}</text>`;}).join("");
+ const nd=nodes().map((k,i)=>{const n=NODES[k];return`<g class="nd ${nodeOn(k)?"on":""} ${n.later?"later":""} ${n.person?"person":""}" style="--i:${i}" data-node="${k}" data-x="node" data-v="${k}" tabindex="0" role="button" aria-label="${esc(nodeT(k))}: ${esc(nodeSub(k))}"><rect x="${n.x-92}" y="${n.y-28}" width="184" height="56" rx="12"/><foreignObject x="${n.x-84}" y="${n.y-17}" width="34" height="34"><div xmlns="http://www.w3.org/1999/xhtml">${logo(nodeLogo(k),34)}</div></foreignObject><text class="t" x="${n.x-44}" y="${n.y-3}">${esc(nodeT(k))}</text><text class="s" x="${n.x-44}" y="${n.y+14}">${esc(nodeSub(k).slice(0,22))}</text></g>`;}).join("");
+ return`<svg viewBox="0 0 1000 ${full()?490:370}" role="img" aria-label="Map of the systems and their connections">${lines}${nd}<circle id="cx-packet" r="8" cx="-20" cy="-20"/></svg>`;}
+function rowConn(l){const r=l.r?role(l.r):null,c=r?chosen(r.k):null;const alts=r?r.opts.filter(o=>o.id!==c.id).slice(0,4).map(o=>`<span title="${esc(o.n)}">${logo(o.l,20)}</span>`).join(""):"";
+ return`<tr><td class="mono">${l.n}</td><td><b>${esc(nodeT(l.a))}</b> → <b>${esc(nodeT(l.b))}</b><div class="small muted">${esc(l.what)}</div></td><td>${c?`<span class="tool">${logo(c.l,24)} ${esc(c.n)}</span>`:`<span class="muted">No tool</span>`}</td><td>${r?`<b>${range(roleCost(r.k))}</b><div class="small muted">Counted once a month${X.have[r.k]?", already owned":""}</div>`:esc(l.cost||"$0")}</td><td><div class="alts">${alts||'<span class="muted small">None needed</span>'}</div></td><td>${esc(l.trig)}<div class="small muted">${esc(l.acc)}</div></td><td><span class="tag ${stTag(l.st)}">${esc(l.st)}</span></td></tr>`;}
+function roleCard(r){const c=chosen(r.k);return`<div class="card rolecard"><div class="row"><h3>${esc(rn(r))}${r.full?'<span class="scopechip">FULL PLATFORM</span>':""}</h3><span class="spacer"></span><b class="rolecost">${range(roleCost(r.k))}<small> a month</small></b></div><p class="muted small">${esc(full()&&r.whyFull?r.whyFull:r.why)}</p>
+ <div class="toolgrid" role="radiogroup" aria-label="${esc(rn(r))}">${r.opts.map(o=>`<button type="button" class="toolopt" role="radio" aria-checked="${o.id===c.id}" data-x="pick" data-role="${r.k}" data-v="${o.id}">${logo(o.l,30)}<span class="tn">${esc(o.n)}</span><span class="tc">${range(o.cost(X.vol))}</span></button>`).join("")}</div>
+ <p class="small" style="margin-top:8px"><b>${esc(c.n)}:</b> ${esc(c.note)}</p><label class="tog" style="margin-top:6px"><input type="checkbox" data-have="${r.k}" ${X.have[r.k]?"checked":""}> We already pay for this, so count it as $0</label></div>`;}
+function view(){const t=total(),e=effort(),V=X.vol,rs=roles(),mid=rs.map(r=>{const c=roleCost(r.k);return{r,v:(c[0]+c[1])/2};}),sum=mid.reduce((a,x)=>a+x.v,0)||1,fresh=!X.seen;X.seen=true;
+ const lines=rs.map(r=>`<li>${logo(chosen(r.k).l,22)}<span>${esc(rn(r))}<small>${esc(chosen(r.k).n)}${X.have[r.k]?" · owned":""}</small></span><b>${range(roleCost(r.k))}</b></li>`).join("");
+ const fullNote=full()?`<div class="card" style="border-color:var(--hold)"><h3>What the full platform adds</h3><div class="g3" style="margin-top:8px">${[["More brands and products","Each one is a profile in the profile store: new rules, not a new stack. Your book and web series would each add a profile."],["Results","Analytics and sales imports connect each campaign to clicks, sales or sign-ups."],["Later modules","SEO, paid media and an orchestrator. API access is free, but ad spend isn't included here, and paid media starts read-only."]].map(([a,b])=>`<div class="sheet"><h4>${a}</h4><p class="small muted" style="margin-top:3px">${b}</p></div>`).join("")}</div></div>`:"";
+ const challenge=full()?[["One stack, three brands","Add your book and web series as profiles. Which costs stay flat, and which grow with each brand?"],["Paid media safely","What must be true before paid media moves from read-only to capped actions?"],["Ten times the volume","Set pieces to 3,600. Which tool's cost jumps first, and is it still your best option?"]]:[["Under $50","Get the total under $50 a month. Which risks did you accept, and would you defend them to legal?"],["Use what you have","Your organization runs on Microsoft 365. Rebuild the stack. Which connections get harder, and which stay the same?"],["Ten times the volume","Set pieces to 3,600. Which tool's cost jumps first, and is it still your best option?"]];
+ return`<div class="cx ${fresh?"fresh":""}" id="cx-inner"><div class="card hero"><div class="row"><div><div class="eyebrow">Connections and cost · build your own stack</div><h2 style="margin-top:6px">${full()?"Where this system can grow: the full campaign platform":"What it takes to run the translation feature for real"}</h2></div><span class="spacer"></span><div class="viewseg" role="group" aria-label="View"><button type="button" data-x="view" data-v="translation" aria-pressed="${!full()}">Translation feature</button><button type="button" data-x="view" data-v="full" aria-pressed="${full()}">Full platform</button></div></div>
+ <p class="muted" style="max-width:80ch">${full()?"The same engine, extended to many brands and products, with results tracking and later modules. Swap any tool: the connections stay the same.":"Today's design: localization with the blind translator comparison, for Kestrel. Pick a tool for each connection, or tick what you already pay for, and the plan and cost update."}</p>
+ <div class="row"><span class="small muted">Start from</span>${Object.entries(PRESETS).map(([k,x])=>`<button type="button" class="chip" data-x="preset" data-v="${k}" aria-pressed="${X.preset===k}">${esc(x.label)}</button>`).join("")}</div></div>
+ <div class="card"><div class="row"><h3>Live system map</h3><span class="small muted" id="cx-note">Click a system to see its connections.</span><span class="spacer"></span><button class="btn" type="button" data-x="trace" id="cx-trace">▶ Trace a run</button></div><div class="mapbox">${mapSVG()}</div></div>
+ ${fullNote}
+ <div class="stackgrid"><div class="col">${rs.map(roleCard).join("")}</div>
+ <aside class="card plan"><div class="eyebrow">Your plan · ${full()?"full platform":"translation feature"}</div><div class="total" id="cx-total" data-lo="${t[0]}" data-hi="${t[1]}">${range(t)}</div><span class="small muted">a month, estimated</span>
+ <div class="stacked" aria-hidden="true">${mid.map(x=>{const c=(LOGOS[chosen(x.r.k).l]||{}).c;return`<i style="flex:${Math.max(x.v/sum,.012)};background:${c==="#FFFFFF"?"#FF3D57":c}" title="${esc(rn(x.r))}"></i>`;}).join("")}</div>
+ <dl class="kv small" style="margin:10px 0"><dt>First year</dt><dd><b>${range([t[0]*12,t[1]*12])}</b></dd><dt>Setup</dt><dd>${e[0]}–${e[1]} hours, a rough estimate</dd><dt>For scale</dt><dd>Translation today: about $18,000 a month</dd></dl>
+ <div class="g2 small" style="gap:8px"><label class="fld">Pieces a month<input type="number" min="1" max="100000" step="10" data-vol="pieces" value="${V.pieces}"></label><label class="fld">Paid seats<input type="number" min="1" max="500" data-vol="seats" value="${V.seats}"></label></div>
+ <ul class="planlines">${lines}</ul><p class="small muted">Not included: staff time, ad spend, translators, taxes and any server shared between tools.</p>
+ <div class="row" style="margin-top:8px"><button class="btn" type="button" data-x="copy" id="cx-copy">Copy the plan</button></div>
+ <div style="margin-top:10px">${warnings().map(([k,m])=>`<div class="flag ${k}" style="margin-top:5px"><b>${k==="block"?"CONFLICT":k==="hold"?"RISK":"NOTE"}</b><span>${esc(m)}</span></div>`).join("")}</div></aside></div>
+ <div class="card"><h3>What needs to be done</h3><p class="muted small" style="margin:3px 0 8px">Your plan, in build order. Tick steps as you go. This list stays only while the page is open.</p><ol class="todo">${rs.map(r=>{const x=chosen(r.k).extraEffort||[0,0];return`<li><label><input type="checkbox" data-done="${r.k}" ${X.done[r.k]?"checked":""}>${logo(chosen(r.k).l,24)}<span><b>${esc(rn(r))}: ${esc(chosen(r.k).n)}</b><br><span class="small muted">${esc(full()&&r.todoFull?r.todoFull:r.todo)}</span></span><em class="small muted">${r.effort[0]+x[0]}–${r.effort[1]+x[1]} h</em></label></li>`;}).join("")}</ol></div>
+ <div class="card"><h3>All connections, with tools and costs</h3><p class="muted small" style="margin:3px 0 8px">Alternatives are the other tools you can swap in for that connection, and each role is counted once in the total.</p><div class="tbl"><table><thead><tr><th>#</th><th>Connection</th><th>Tool</th><th>Proposed cost</th><th>Alternatives</th><th>Trigger and access</th><th>Status</th></tr></thead><tbody>${links().map(rowConn).join("")}</tbody></table></div></div>
+ <div class="card"><h3>Class challenge</h3><div class="g3" style="margin-top:8px">${challenge.map(([a,b])=>`<div class="sheet"><h4>${a}</h4><p class="small muted" style="margin-top:3px">${b}</p></div>`).join("")}</div></div>
+ <div class="card"><h3>About these costs</h3><p class="small muted" style="margin-top:6px">Prices were checked in November 2026. Claude, n8n, monday, Slack and Plausible figures come from vendor pricing or Anthropic's pricing table, and the others from secondary sources that sometimes disagree. Usage assumptions are estimates: 3 variants per model call, 1,470–4,400 input tokens, 250–1,000 output tokens and 30% extra calls, with the high end doubled for margin. Confirm with each vendor before budgeting. Logos belong to their owners and need an internet connection to load. No tool on this tab is connected.</p></div></div>`;}
+function stopTrace(){X.tok++;X.tracing=false;const p=document.getElementById("cx-packet");if(p){p.setAttribute("cx",-20);p.setAttribute("cy",-20);}const b=document.getElementById("cx-trace");if(b)b.textContent="▶ Trace a run";}
+function runTrace(){const tok=++X.tok,seq=links().filter(l=>typeof l.n==="number"||l.n==="a"||l.n==="c");X.tracing=true;const btn=document.getElementById("cx-trace");if(btn)btn.textContent="■ Stop trace";const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;let i=0;
+ root.querySelectorAll(".ed.on,.ed.live").forEach(e=>e.classList.remove("on","live"));root.querySelectorAll(".nd.on").forEach(e=>e.classList.remove("on"));
+ const step=()=>{if(tok!==X.tok)return;const note=document.getElementById("cx-note");if(i>=seq.length){stopTrace();if(note)note.textContent="Trace finished. Swap a tool and run it again: the path stays the same.";return;}
+  const l=seq[i++],a=NODES[l.a],b=NODES[l.b],p=document.getElementById("cx-packet");if(!p)return;
+  root.querySelectorAll(".ed.live").forEach(e=>e.classList.remove("live"));const line=root.querySelector(`.ed[data-n="${l.n}"]`);if(line)line.classList.add("on","live");
+  const na=root.querySelector(`[data-node="${l.a}"]`),nb=root.querySelector(`[data-node="${l.b}"]`);if(na)na.classList.add("on");
+  if(note)note.textContent=`${l.n}. ${nodeT(l.a)} → ${nodeT(l.b)}: ${l.what}`;
+  const dur=reduce?300:900,t0=performance.now();
+  const f=t=>{if(tok!==X.tok)return;const k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;p.setAttribute("cx",a.x+(b.x-a.x)*e);p.setAttribute("cy",a.y+(b.y-a.y)*e);if(k<1)requestAnimationFrame(f);else{if(nb){nb.classList.add("on","hit");setTimeout(()=>nb.classList.remove("hit"),350);}setTimeout(step,reduce?150:220);}};requestAnimationFrame(f);};step();}
+function countUp(){const el=document.getElementById("cx-total");if(!el)return;const lo=+el.dataset.lo,hi=+el.dataset.hi,from=X.last||[lo,hi];X.last=[lo,hi];if(matchMedia("(prefers-reduced-motion: reduce)").matches||(from[0]===lo&&from[1]===hi))return;el.classList.add("bump");setTimeout(()=>el.classList.remove("bump"),450);const t0=performance.now();
+ const f=t=>{if(!el.isConnected)return;const k=Math.min(1,(t-t0)/450),e=1-Math.pow(1-k,3);el.textContent=range([from[0]+(lo-from[0])*e,from[1]+(hi-from[1])*e]);if(k<1)requestAnimationFrame(f);else el.textContent=range([lo,hi]);};requestAnimationFrame(f);}
+function render(focusSel){stopTrace();root.innerHTML=view();countUp();if(focusSel){const e=root.querySelector(focusSel);if(e)e.focus({preventScroll:true});}}
+root.addEventListener("click",e=>{const el=e.target.closest("[data-x]");if(!el)return;const a=el.dataset.x,v=el.dataset.v;
+ if(a==="view"){X.view=v;X.sel=null;X.seen=false;render(`[data-x="view"][data-v="${v}"]`);}
+ else if(a==="pick"){X.picks[el.dataset.role]=v;X.preset=null;render(`[data-x="pick"][data-role="${el.dataset.role}"][data-v="${v}"]`);}
+ else if(a==="preset"){X.picks={...PRESETS[v].picks};X.preset=v;render(`[data-x="preset"][data-v="${v}"]`);}
+ else if(a==="node"){X.sel=X.sel===v?null:v;render(`[data-node="${v}"]`);}
+ else if(a==="trace"){if(X.tracing){stopTrace();const n=document.getElementById("cx-note");if(n)n.textContent="Click a system to see its connections.";}else runTrace();}
+ else if(a==="copy"){const txt=planText(),b=el,ok=()=>{b.textContent="Copied";setTimeout(()=>{if(b.isConnected)b.textContent="Copy the plan";},1600);};const fb=()=>{const t=document.createElement("textarea");t.value=txt;document.body.appendChild(t);t.select();try{document.execCommand("copy");ok();}catch(_){}t.remove();};try{navigator.clipboard.writeText(txt).then(ok,fb);}catch(_){fb();}}});
+root.addEventListener("keydown",e=>{const g=e.target.closest&&e.target.closest('g[data-x="node"]');if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();g.dispatchEvent(new MouseEvent("click",{bubbles:true}));}});
+root.addEventListener("change",e=>{const t=e.target;
+ if(t.dataset.have){X.have[t.dataset.have]=t.checked;render(`[data-have="${t.dataset.have}"]`);}
+ else if(t.dataset.done){X.done[t.dataset.done]=t.checked;}
+ else if(t.dataset.vol){X.vol[t.dataset.vol]=Math.max(1,Math.min(+t.max||1e5,Math.round(+t.value)||1));render(`[data-vol="${t.dataset.vol}"]`);}});
+document.querySelectorAll("nav.scenes button").forEach(b=>b.addEventListener("click",()=>{if(b.dataset.scene==="connections"){X.seen=false;render();}else stopTrace();}));
+window.__cx={X,total,roleCost,warnings,planText,roles,links,render};
+render();
+})();
 </script>
